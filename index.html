@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proposta Comercial — Landing Page Interativa | Grupo Haz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f7fc;--w:#fff;--ink:#0a1a33;--gr:#3a4a66;--mut:#6f7d96;--line:#dce4f1;--b:#1c4ed8;--b2:#3b82f6;--bs:#e8effc;--navy2:#12305c;--r:20px;
+--fd:"Fraunces",Georgia,"Times New Roman",serif;--fb:"Manrope","Segoe UI",system-ui,-apple-system,Arial,sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.65 var(--fb);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--fd);font-weight:600;line-height:1.12;letter-spacing:-.02em}
+h2{font-size:clamp(1.9rem,4vw,2.9rem);margin-bottom:16px}
+h3{font-size:1.3rem;margin-bottom:8px}
+p{color:var(--gr);max-width:60ch}
+section{padding:clamp(60px,9vw,116px) 20px}
+.wrap{max-width:1140px;margin:0 auto}
+.alt{background:var(--w)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.card{background:var(--w);border:1px solid var(--line);border-radius:var(--r);padding:30px;box-shadow:0 14px 30px -22px rgba(10,26,51,.35);transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 24px 40px -22px rgba(28,78,216,.35)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:34px}
+.note{font-size:.85rem;color:var(--mut);margin-top:16px}
+.btn{display:inline-block;background:linear-gradient(135deg,var(--b),#2f6bf0);color:#fff;border:0;border-radius:999px;padding:13px 28px;font:600 .95rem var(--fb);cursor:pointer;box-shadow:0 10px 22px -10px rgba(28,78,216,.7);transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 16px 26px -12px rgba(28,78,216,.8)}
+:focus-visible{outline:3px solid var(--b2);outline-offset:3px}
+.tag{display:inline-block;background:var(--bs);color:var(--b);border-radius:999px;padding:6px 15px;font-size:.85rem;font-weight:600}
+
+/* TOPO — MARCA GRUPO HAZ */
+.top{position:absolute;top:0;left:0;right:0;padding:22px 20px;z-index:3}
+.top .wrap{display:flex;justify-content:space-between;align-items:center}
+.brand{display:flex;align-items:center;gap:10px;font:700 1.1rem var(--fd);color:#fff}
+.brand i{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--b2),#fff);display:grid;place-items:center;color:var(--navy2);font:700 1.1rem var(--fd);font-style:normal}
+.top small{color:#b9cbef;font-size:.85rem}
+
+/* HERO */
+.hero{position:relative;background:radial-gradient(900px 500px at 88% 10%,#2d63d8 0,transparent 65%),linear-gradient(160deg,#071427,#0f2a55);color:#fff;padding:150px 20px 110px}
+.hero h1{font-size:clamp(2.3rem,5.4vw,4.1rem);margin:16px 0 20px;max-width:12.5em;font-weight:600}
+.hero p{color:#c5d5f2}
+.hero .tag{background:rgba(255,255,255,.1);color:#cfe0ff}
+.kick{font-size:1rem;color:#9fb8e8!important}
+.seal{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:9px 20px;font-size:.85rem;margin-top:26px;background:rgba(255,255,255,.06)}
+.seal i{width:8px;height:8px;border-radius:50%;background:#6cc1ff;animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.3}}
+.stage{position:relative;height:360px}
+.stage>*{position:absolute}
+.s-lap{left:0;top:40px;width:78%;height:220px;background:#020a16;border:1px solid #2b4677;border-radius:12px 12px 0 0;padding:8px;box-shadow:0 30px 60px -20px rgba(0,0,0,.7);animation:rise .9s both}
+.s-lap div{background:linear-gradient(135deg,#e8effc,#fff);height:100%;border-radius:6px;padding:14px}
+.s-lap b{display:block;height:10px;width:60%;background:var(--b);border-radius:5px;margin-bottom:8px}
+.s-lap span{display:block;height:6px;background:var(--line);border-radius:4px;margin-bottom:6px;width:80%}
+.s-base{left:-4%;top:260px;width:86%;height:12px;background:linear-gradient(#5a6f96,#33456b);border-radius:0 0 14px 14px}
+.s-ph{right:2%;top:70px;width:112px;height:216px;background:#020a16;border:1px solid #2b4677;border-radius:22px;padding:6px;box-shadow:0 30px 60px -20px rgba(0,0,0,.7);animation:rise .9s .15s both}
+.s-ph div{background:#fff;height:100%;border-radius:16px;padding:12px 9px}
+.s-ph b{display:block;height:6px;width:70%;background:var(--b);border-radius:4px;margin-bottom:10px}
+.s-ph span{display:block;height:20px;border:1px solid var(--line);border-radius:6px;margin-bottom:6px}
+.s-doc{left:8%;top:222px;width:84px;height:104px;background:#fff;border-radius:8px;transform:rotate(-8deg);padding:10px;box-shadow:0 18px 28px -12px rgba(0,0,0,.6)}
+.s-doc b{display:block;height:5px;background:var(--b);width:60%;margin-bottom:6px}
+.s-doc span{display:block;height:4px;background:var(--line);margin-bottom:5px}
+.s-chart{right:20%;top:272px;background:#fff;border-radius:12px;padding:10px 12px;display:flex;align-items:flex-end;gap:5px;height:72px}
+.s-chart i{width:10px;background:var(--b2);border-radius:3px 3px 0 0}
+.s-quiz{right:0;top:0;background:linear-gradient(135deg,var(--b),var(--b2));color:#fff;border-radius:12px;padding:8px 15px;font-size:.8rem;font-weight:700}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+
+/* FLUXO */
+.flow{display:grid;grid-template-columns:repeat(6,1fr);margin:42px 0 26px;position:relative}
+.flow:before{content:"";position:absolute;top:23px;left:8%;right:8%;height:2px;background:linear-gradient(90deg,var(--b2),var(--line))}
+.step{text-align:center;position:relative;padding:0 6px}
+.step b{display:grid;place-items:center;width:46px;height:46px;margin:0 auto 12px;border-radius:50%;background:var(--w);border:2px solid var(--b);color:var(--b);font-family:var(--fd)}
+.step span{font-weight:600;font-size:.95rem}
+
+/* LAPTOP + PÁGINAS DA LP */
+.laptop{perspective:1600px}
+.lap-screen{background:#0a1a33;border-radius:16px 16px 0 0;padding:11px;transform:rotateY(-5deg) rotateX(2deg);box-shadow:0 44px 70px -30px rgba(10,26,51,.6)}
+.chrome{display:flex;gap:6px;align-items:center;background:#eef3fb;border-radius:8px 8px 0 0;padding:7px 12px}
+.chrome i{width:8px;height:8px;border-radius:50%;background:#c3cfe4}
+.chrome span{margin-left:10px;flex:1;background:#fff;border-radius:6px;font-size:.6rem;color:var(--mut);padding:2px 10px}
+.scr{display:none;background:#fff;border-radius:0 0 8px 8px;min-height:330px;padding:18px 20px;font-size:.8rem}
+.scr.on{display:block;animation:rise .45s both}
+.lnav{display:flex;align-items:center;gap:10px;padding-bottom:12px;border-bottom:1px solid var(--line);margin-bottom:16px;font-size:.68rem;color:var(--mut)}
+.lnav strong{font:700 .85rem var(--fd);color:var(--ink);margin-right:auto}
+.lnav em{font-style:normal;background:var(--b);color:#fff;border-radius:999px;padding:4px 12px;font-weight:600}
+.hg{display:grid;grid-template-columns:1.15fr 1fr;gap:18px;align-items:center}
+.hg h4{font-size:1.32rem;margin:8px 0}
+.hg p{font-size:.72rem;margin-bottom:12px}
+.mbtn{display:inline-block;background:var(--b);color:#fff;border-radius:999px;padding:7px 15px;font-size:.7rem;font-weight:700}
+.mtag{font-size:.62rem;color:var(--b);font-weight:700}
+.portrait{height:210px;border-radius:18px;background:linear-gradient(160deg,#dbe8fd,#a9c4f5);position:relative;overflow:hidden}
+.portrait:before{content:"";position:absolute;left:50%;top:34px;width:62px;height:70px;transform:translateX(-50%);border-radius:50%;background:#f0c9a8;box-shadow:0 -10px 0 8px #3a2a22 inset}
+.portrait:after{content:"";position:absolute;left:50%;bottom:-40px;width:150px;height:130px;transform:translateX(-50%);border-radius:70px 70px 0 0;background:#fff;border-top:14px solid var(--b)}
+.chip{position:absolute;background:#fff;border-radius:10px;padding:5px 10px;font-size:.6rem;font-weight:700;box-shadow:0 8px 16px -8px rgba(0,0,0,.35);z-index:2}
+.stats{display:flex;gap:10px;margin-top:16px}
+.stats div{flex:1;background:var(--bs);border-radius:12px;padding:10px;font-size:.62rem;color:var(--gr)}
+.stats b{display:block;font:700 1rem var(--fd);color:var(--b)}
+.plate{width:120px;height:120px;border-radius:50%;border:8px solid #fff;background:radial-gradient(circle at 35% 35%,#7fbf6a 0 20%,transparent 21%),radial-gradient(circle at 65% 40%,#e9a34b 0 18%,transparent 19%),radial-gradient(circle at 50% 70%,#d95d4b 0 16%,transparent 17%),#eaf1fd;box-shadow:0 14px 24px -10px rgba(10,26,51,.4);margin:auto}
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.cols3 div{border:1px solid var(--line);border-radius:12px;padding:12px;font-size:.66rem}
+.cols3 b{display:block;font:700 .8rem var(--fd);margin-bottom:3px}
+.cta-band{margin-top:14px;background:linear-gradient(135deg,#0a1a33,#1c4ed8);border-radius:16px;color:#fff;text-align:center;padding:22px 16px}
+.cta-band h4{font-size:1.15rem;margin-bottom:10px;color:#fff}
+.cta-band .mbtn{background:#fff;color:var(--b)}
+.lap-base{height:14px;background:linear-gradient(#c8d4ea,#9fb0d0);border-radius:0 0 18px 18px;margin:0 -4%}
+.tabs{display:flex;gap:8px;justify-content:center;margin-top:22px;flex-wrap:wrap}
+.tabs button{border:1px solid var(--line);background:var(--w);border-radius:999px;padding:8px 16px;font:600 .82rem var(--fb);cursor:pointer;color:var(--gr);transition:all .2s}
+.tabs button.on,.tabs button:hover{background:var(--b);color:#fff;border-color:var(--b)}
+
+/* CELULAR */
+.phone{width:284px;margin:0 auto;background:#0a1a33;border-radius:40px;padding:11px;box-shadow:0 44px 70px -30px rgba(10,26,51,.65)}
+.phone-in{background:#fff;border-radius:30px;padding:28px 18px 22px;position:relative}
+.phone-in:before{content:"";position:absolute;top:9px;left:50%;transform:translateX(-50%);width:70px;height:16px;background:#0a1a33;border-radius:10px}
+.prog{height:5px;background:var(--line);border-radius:3px;margin:10px 0 4px}
+.prog i{display:block;height:100%;width:33%;background:var(--b);border-radius:3px}
+.phone small{color:var(--mut);font-size:.72rem}
+.phone h4{font-size:1.12rem;margin:12px 0}
+.phone label{font-size:.75rem;font-weight:600;display:block;margin-top:8px}
+.fld{border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:.9rem;margin-top:4px}
+.sx{display:flex;gap:8px;margin-top:4px}
+.sx span{flex:1;text-align:center;border:1px solid var(--line);border-radius:10px;padding:8px;font-size:.82rem}
+.sx .on{background:var(--bs);border-color:var(--b);color:var(--b);font-weight:700}
+.phone .btn{width:100%;margin-top:16px;text-align:center}
+
+/* QUIZ */
+.quiz{max-width:720px;margin-top:34px}
+.q{display:none}.q.on{display:block;animation:rise .4s both}
+.q h3{font-size:1.45rem;margin-bottom:16px}
+.opt{display:block;width:100%;text-align:left;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:15px 18px;margin-bottom:10px;font:500 1rem var(--fb);color:var(--ink);cursor:pointer;transition:border-color .2s,background .2s}
+.opt:hover{border-color:var(--b);background:var(--bs)}
+.qbar{display:flex;justify-content:space-between;font-size:.82rem;color:var(--mut);margin-bottom:10px}
+.qdone{display:none;text-align:center;padding:16px}
+.qdone .btn{margin-top:14px}
+
+/* CÁLCULO */
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;background:linear-gradient(150deg,#071427,#12305c);color:#fff;border-radius:30px;padding:clamp(28px,5vw,60px)}
+.calc p{color:#bccbea}.calc h2{color:#fff}
+.imc{background:#fff;color:var(--ink);border-radius:var(--r);padding:28px}
+.imc .row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line)}
+.imc code{display:block;background:var(--bs);border-radius:10px;padding:10px 14px;margin:16px 0;font-family:Consolas,monospace;color:var(--b)}
+.imc .big{font:600 3.8rem var(--fd);color:var(--b);line-height:1}
+.imc p{color:var(--gr)}
+.chain{display:flex;gap:10px;align-items:center;margin-top:22px;font-size:.9rem;flex-wrap:wrap}
+.chain span{border:1px solid #3c5a90;border-radius:999px;padding:5px 15px}
+
+/* RESULTADO */
+.res{max-width:370px;margin:0 auto;text-align:center}
+.res .ring{width:88px;height:88px;margin:8px auto 16px;border-radius:50%;background:conic-gradient(var(--b) 0 75%,var(--bs) 0);display:grid;place-items:center}
+.res .ring i{width:66px;height:66px;border-radius:50%;background:#fff;display:grid;place-items:center;font:600 1.3rem var(--fd);color:var(--b);font-style:normal}
+.res strong{display:block;font:600 1.45rem var(--fd);margin:4px 0 10px}
+.res .btn{margin:16px 0 12px}
+
+/* E-BOOK */
+.book{position:relative;height:410px;perspective:1200px}
+.pg{position:absolute;width:212px;height:292px;background:#fff;border:1px solid var(--line);border-radius:6px 12px 12px 6px;padding:18px;box-shadow:0 28px 44px -22px rgba(10,26,51,.5)}
+.pg.p2{left:30%;top:60px;transform:rotateY(-24deg) rotateZ(4deg);z-index:1}
+.pg.p3{left:52%;top:30px;transform:rotateY(-24deg) rotateZ(6deg)}
+.pg.cover{left:6%;top:40px;background:linear-gradient(150deg,#1c4ed8,#0a1a33);color:#fff;border:0;transform:rotateY(18deg);z-index:2;display:flex;flex-direction:column;justify-content:flex-end}
+.pg.cover small{opacity:.8;font-size:.7rem;letter-spacing:.06em}
+.pg.cover h4{font-size:1.55rem;margin:6px 0}
+.pg.cover p{color:#cfe0ff;font-size:.78rem}
+.pg h5{font:600 .85rem var(--fd);margin-bottom:8px}
+.pg .l{height:5px;background:var(--line);border-radius:3px;margin-bottom:6px}
+.pg .li{display:flex;gap:6px;align-items:center;margin-bottom:6px}
+.pg .li:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--b2)}
+.pg .li i{flex:1;height:5px;background:var(--line);border-radius:3px}
+.tb{border:1px solid var(--line);border-radius:6px;margin-top:8px}
+.tb div{height:14px;border-bottom:1px solid var(--line)}.tb div:nth-child(odd){background:var(--bs)}.tb div:last-child{border:0}
+
+/* PERFIS */
+.prof b{display:block;color:var(--b);font:700 .82rem var(--fb);margin-bottom:6px}
+.rule{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;margin-top:34px;font-weight:600}
+.rule span{background:var(--ink);color:#fff;border-radius:12px;padding:9px 22px}
+.rule em{color:var(--b);font-style:normal}
+
+/* PREÇOS */
+.prices{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:38px}
+.price{font:600 clamp(2.5rem,5vw,3.5rem) var(--fd);color:var(--b);margin:10px 0}
+ul.ck{list-style:none;padding:0;margin-top:16px}
+ul.ck li{padding:8px 0 8px 32px;position:relative;border-top:1px solid var(--line);font-size:.95rem}
+ul.ck li:before{content:"✓";position:absolute;left:0;color:#fff;background:var(--b);width:21px;height:21px;border-radius:50%;text-align:center;font-size:.72rem;line-height:21px;top:11px}
+.hl{grid-column:1/-1;background:linear-gradient(135deg,#0a1a33,#1c4ed8);color:#fff;border-radius:var(--r);padding:28px 34px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.hl h3{margin:0}
+.hl strong{font:600 2.5rem var(--fd)}
+.ebook{display:grid;grid-template-columns:1fr auto;gap:36px;align-items:center}
+.ebook .price{margin:0}
+table{width:100%;border-collapse:collapse;margin-top:30px;background:var(--w);border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
+td{padding:19px 24px;border-bottom:1px solid var(--line)}
+td:last-child{text-align:right;font-weight:700;color:var(--b);white-space:nowrap}
+.sum{background:linear-gradient(160deg,#071427,#0f2a55);color:#fff;padding:clamp(60px,8vw,96px) 20px;text-align:center}
+.sum p{color:#bccbea;margin:14px auto 0}
+.sum h2{color:#fff;font-size:clamp(1.5rem,3.4vw,2.3rem);max-width:22em;margin:0 auto}
+.by{margin-top:34px;padding-top:26px;border-top:1px solid rgba(255,255,255,.15);display:flex;justify-content:center;align-items:center;gap:12px;color:#9fb8e8;font-size:.9rem}
+
+.rv{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+@media(max-width:860px){
+ .two,.calc,.prices,.ebook{grid-template-columns:1fr;gap:34px}
+ .grid3{grid-template-columns:1fr}.grid4{grid-template-columns:1fr 1fr}
+ .flow{grid-template-columns:1fr;gap:18px}.flow:before{display:none}
+ .step{display:flex;align-items:center;gap:14px;text-align:left}.step b{margin:0}
+ .stage{height:330px}.hg{grid-template-columns:1fr}.portrait{height:150px}
+ .book{height:360px}.pg{width:170px;height:240px}.pg.p2{left:34%}.pg.p3{left:52%}
+ .hl{flex-direction:column;align-items:flex-start}.hero{padding-top:120px}.top small{display:none}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<!-- 1. HERO / CAPA -->
+<header class="hero">
+ <div class="top"><div class="wrap"><div class="brand"><i>H</i>Grupo Haz</div><small>Proposta desenvolvida pelo Grupo Haz</small></div></div>
+ <div class="wrap two">
+  <div>
+   <span class="tag">Projeto para o segmento de Nutrição</span>
+   <p class="kick" style="margin-top:22px">Proposta Comercial</p>
+   <h1>Landing Page Interativa + Experiência Personalizada</h1>
+   <p>Uma experiência digital criada para transformar respostas em perfis e direcionar cada usuário ao conteúdo correspondente.</p>
+   <span class="seal"><i></i>Experiência Interativa</span>
+  </div>
+  <div class="stage" aria-hidden="true">
+   <div class="s-lap"><div><b></b><span></span><span></span><span style="width:50%"></span></div></div>
+   <div class="s-base"></div>
+   <div class="s-ph"><div><b></b><span></span><span></span><span style="background:var(--bs)"></span></div></div>
+   <div class="s-doc"><b></b><span></span><span></span><span></span></div>
+   <div class="s-chart"><i style="height:20px"></i><i style="height:34px"></i><i style="height:26px"></i><i style="height:46px"></i></div>
+   <div class="s-quiz">Quiz</div>
+  </div>
+ </div>
+</header>
+
+<main>
+<!-- 2. VISÃO GERAL -->
+<section class="alt"><div class="wrap">
+ <h2>Mais do que uma Landing Page</h2>
+ <p>O projeto combina uma Landing Page responsiva com uma experiência interativa de perguntas, cálculo e segmentação. O usuário percorre uma jornada estruturada e, ao final, é direcionado ao conteúdo correspondente ao seu perfil.</p>
+ <div class="grid3">
+  <div class="card rv"><h3>Landing Page</h3><p>Página personalizada, responsiva e preparada para conversão.</p></div>
+  <div class="card rv"><h3>Quiz Interativo</h3><p>Coleta estruturada de informações para identificar o perfil do usuário.</p></div>
+  <div class="card rv"><h3>Conteúdo Personalizado</h3><p>Direcionamento automático para o material correspondente ao perfil identificado.</p></div>
+ </div>
+</div></section>
+
+<!-- 3. COMO FUNCIONA -->
+<section><div class="wrap">
+ <h2>Como funciona a experiência</h2>
+ <div class="flow rv">
+  <div class="step"><b>01</b><span>Landing Page</span></div>
+  <div class="step"><b>02</b><span>Quiz</span></div>
+  <div class="step"><b>03</b><span>Dados do usuário</span></div>
+  <div class="step"><b>04</b><span>Cálculo</span></div>
+  <div class="step"><b>05</b><span>Perfil</span></div>
+  <div class="step"><b>06</b><span>Guia correspondente</span></div>
+ </div>
+ <p>Uma única estrutura pode trabalhar com diferentes perfis e diferentes materiais.</p>
+</div></section>
+
+<!-- 4. MOCKUP DESKTOP — PÁGINAS DA LP (navegáveis) -->
+<section class="alt"><div class="wrap two">
+ <div class="rv">
+  <div class="laptop">
+   <div class="lap-screen">
+    <div class="chrome"><i></i><i></i><i></i><span>seunome.com.br</span></div>
+    <div class="scr on" id="s1">
+     <div class="lnav"><strong>Nutri Helena Duarte</strong><span>Sobre</span><span>Guias</span><em>Começar avaliação</em></div>
+     <div class="hg">
+      <div>
+       <span class="mtag">Nutrição · CRN 0000</span>
+       <h4>Descubra seu perfil e receba um guia para o seu momento</h4>
+       <p>Responda algumas perguntas e veja qual conteúdo foi preparado para você.</p>
+       <span class="mbtn">Começar avaliação</span>
+      </div>
+      <div class="portrait"><span class="chip" style="left:8px;top:14px">Avaliação em 6 etapas</span><span class="chip" style="right:8px;bottom:14px">Guia personalizado</span></div>
+     </div>
+     <div class="stats"><div><b>6</b>etapas de quiz</div><div><b>IMC</b>calculado na hora</div><div><b>Guia</b>por perfil</div></div>
+    </div>
+    <div class="scr" id="s2">
+     <div class="lnav"><strong>Nutri Helena Duarte</strong><span>Sobre</span><span>Guias</span><em>Começar avaliação</em></div>
+     <div class="hg">
+      <div><span class="mtag">Como funciona</span><h4>Três passos simples até o seu guia</h4><p>Você responde, o sistema calcula e o material certo é liberado para o seu perfil.</p></div>
+      <div class="plate"></div>
+     </div>
+     <div class="cols3"><div><b>1. Responda</b>Perguntas sobre rotina e objetivo.</div><div><b>2. Informe seus dados</b>Peso, altura e sexo.</div><div><b>3. Receba o guia</b>Conteúdo do seu perfil.</div></div>
+    </div>
+    <div class="scr" id="s3">
+     <div class="lnav"><strong>Nutri Helena Duarte</strong><span>Sobre</span><span>Guias</span><em>Começar avaliação</em></div>
+     <div class="hg">
+      <div><span class="mtag">Sobre a profissional</span><h4>Acompanhamento alimentar com atenção ao seu momento</h4><p>Espaço para apresentar formação, abordagem e contato da nutricionista.</p></div>
+      <div class="portrait" style="height:150px"></div>
+     </div>
+     <div class="cta-band"><h4>Pronto para conhecer o seu perfil?</h4><span class="mbtn">Começar avaliação</span></div>
+    </div>
+   </div>
+   <div class="lap-base"></div>
+  </div>
+  <div class="tabs" role="tablist"><button class="on" data-t="s1">Topo</button><button data-t="s2">Como funciona</button><button data-t="s3">Profissional e chamada</button></div>
+  <p class="note" style="text-align:center;max-width:none">Layout ilustrativo. Nome, CRN e textos são exemplos e serão substituídos pelos dados do cliente.</p>
+ </div>
+ <div><h2>Experiência completa em desktop</h2><p>Uma interface pensada para apresentar o produto, conduzir o usuário pelo quiz e facilitar a conversão.</p></div>
+</div></section>
+
+<!-- 5. MOCKUP CELULAR -->
+<section><div class="wrap two">
+ <div class="rv"><h2>Experiência mobile</h2><p>Interface adaptada para celular, com navegação simples e foco na experiência do usuário.</p></div>
+ <div class="phone rv" aria-hidden="true"><div class="phone-in">
+  <small>Etapa 2 de 6</small><div class="prog"><i></i></div>
+  <h4>Vamos conhecer um pouco mais sobre você</h4>
+  <label>Qual é o seu peso?</label><div class="fld">82 kg</div>
+  <label>Qual é a sua altura?</label><div class="fld">1,65 m</div>
+  <label>Sexo</label><div class="sx"><span class="on">Feminino</span><span>Masculino</span></div>
+  <span class="btn" style="display:block">Continuar</span>
+ </div></div>
+</div></section>
+
+<!-- 6. QUIZ -->
+<section class="alt"><div class="wrap">
+ <h2>Quiz interativo</h2>
+ <p>As perguntas podem ser configuradas de acordo com a estratégia definida para o projeto.</p>
+ <div class="card quiz">
+  <div class="qbar"><span id="qn">Pergunta 1 de 3</span><span>Demonstração</span></div>
+  <div class="q on"><h3>Você utiliza caneta para emagrecimento?</h3>
+   <button class="opt">Não</button><button class="opt">Sim, comecei recentemente</button><button class="opt">Sim, há alguns meses</button><button class="opt">Sim, há mais tempo</button></div>
+  <div class="q"><h3>Qual é o seu principal objetivo?</h3>
+   <button class="opt">Melhorar minha alimentação</button><button class="opt">Perder peso</button><button class="opt">Organizar minha rotina alimentar</button><button class="opt">Outro</button></div>
+  <div class="q"><h3>Qual é a sua maior dificuldade atualmente?</h3>
+   <button class="opt">Doces</button><button class="opt">Alimentação à noite</button><button class="opt">Falta de organização</button><button class="opt">Montar minhas refeições</button></div>
+  <div class="qdone" id="qd"><h3>Respostas registradas</h3><p style="margin:auto">Exemplo demonstrativo da coleta de respostas.</p><button class="btn" id="qr">Refazer demonstração</button></div>
+ </div>
+ <p class="note">Perguntas e critérios podem ser definidos de acordo com a estratégia do projeto.</p>
+</div></section>
+
+<!-- 7. CALCULADORA -->
+<section><div class="wrap"><div class="calc rv">
+ <div><h2>Cálculo automático</h2><p>Os dados informados pelo usuário podem ser utilizados para gerar métricas e definir o perfil correspondente.</p>
+  <div class="chain"><span>Dados</span>→<span>Cálculo</span>→<span>Perfil</span></div></div>
+ <div class="imc">
+  <div class="row"><span>Peso</span><b>82 kg</b></div>
+  <div class="row"><span>Altura</span><b>1,65 m</b></div>
+  <code>IMC = peso ÷ altura²</code>
+  <small>IMC</small><div class="big">30,1</div>
+  <p style="margin-top:8px;font-size:.9rem">Resultado calculado automaticamente</p>
+  <p class="note">Exemplo demonstrativo. O resultado não substitui avaliação ou acompanhamento profissional.</p>
+ </div>
+</div></div></section>
+
+<!-- 8. RESULTADO -->
+<section class="alt"><div class="wrap two">
+ <div><h2>Seu perfil foi identificado</h2><p>Com base nas informações fornecidas, o usuário pode ser direcionado para o conteúdo correspondente ao seu perfil.</p></div>
+ <div class="card res rv">
+  <small style="color:var(--mut)">Perfil identificado</small>
+  <div class="ring"><i>04</i></div>
+  <strong>Perfil Alimentar 04</strong>
+  <p style="margin:auto;font-size:.9rem">Conteúdo selecionado de acordo com as respostas fornecidas no quiz.</p>
+  <span class="btn">Ver meu guia</span><br>
+  <span class="tag">Conteúdo correspondente ao perfil</span>
+ </div>
+</div></section>
+
+<!-- 9. MOCKUP E-BOOK -->
+<section><div class="wrap two">
+ <div class="book rv" aria-hidden="true">
+  <div class="pg p3"><h5>Tabela simples</h5><div class="tb"><div></div><div></div><div></div><div></div></div></div>
+  <div class="pg p2"><h5>Orientações</h5><div class="l"></div><div class="l" style="width:80%"></div><div class="li"><i></i></div><div class="li"><i></i></div><div class="li"><i></i></div><div class="tb"><div></div><div></div><div></div></div></div>
+  <div class="pg cover"><small>GUIA ALIMENTAR</small><h4>Seu próximo passo</h4><p>Orientações práticas para sua jornada</p></div>
+ </div>
+ <div><h2>Entrega do conteúdo</h2><p>O sistema pode direcionar automaticamente o usuário para o material correspondente ao perfil identificado.</p>
+  <p style="margin-top:12px"><b>Um mesmo projeto pode trabalhar com diferentes guias.</b></p></div>
+</div></section>
+
+<!-- 10. PERFIS -->
+<section class="alt"><div class="wrap">
+ <h2>Uma estrutura preparada para diferentes perfis</h2>
+ <p>A plataforma pode trabalhar com regras de segmentação definidas previamente, permitindo associar diferentes respostas a diferentes materiais.</p>
+ <div class="grid4">
+  <div class="card prof"><b>Perfil 01</b><h3>Guia correspondente</h3></div>
+  <div class="card prof"><b>Perfil 02</b><h3>Guia correspondente</h3></div>
+  <div class="card prof"><b>Perfil 03</b><h3>Guia correspondente</h3></div>
+  <div class="card prof"><b>Perfil 04</b><h3>Guia correspondente</h3></div>
+ </div>
+ <p class="note">Os critérios de segmentação são definidos de acordo com a estratégia do projeto.</p>
+ <div class="rule"><span>Respostas</span><em>→</em><span>Regras</span><em>→</em><span>Perfil</span><em>→</em><span>Guia</span></div>
+</div></section>
+
+<!-- 11 e 12. DESENVOLVIMENTO E WEB APP -->
+<section><div class="wrap">
+ <h2>Desenvolvimento</h2>
+ <div class="prices">
+  <div class="card">
+   <h3>Landing Page Interativa</h3>
+   <div class="price">R$ 1.300,00</div>
+   <p>Desenvolvimento da página personalizada.</p>
+   <ul class="ck">
+    <li>Desenvolvimento da página personalizada</li>
+    <li>Versão responsiva para computador, tablet e celular</li>
+    <li>Quiz interativo</li>
+    <li>Coleta e processamento das respostas</li>
+    <li>Cálculo de IMC</li>
+    <li>Segmentação dos usuários por perfil</li>
+    <li>Direcionamento automático para o conteúdo correspondente</li>
+    <li>CTAs e formulário de captura</li>
+    <li>Estrutura preparada para diferentes e-books</li>
+    <li>Configuração e publicação da página</li>
+   </ul>
+  </div>
+  <div class="card">
+   <h3>Formato Web App / PWA</h3>
+   <div class="price">+ R$ 200,00</div>
+   <p>Adicional para transformar a experiência em um formato Web App/PWA.</p>
+   <ul class="ck">
+    <li>Adaptação para formato Web App/PWA</li>
+    <li>Experiência otimizada para uso no celular</li>
+    <li>Possibilidade de adicionar à tela inicial do celular</li>
+    <li>Estrutura preparada para utilização recorrente</li>
+   </ul>
+  </div>
+  <div class="hl"><h3>Landing Page + Web App</h3><strong>R$ 1.500,00</strong></div>
+ </div>
+</div></section>
+
+<!-- 13. E-BOOKS -->
+<section class="alt"><div class="wrap">
+ <div class="card ebook">
+  <div>
+   <h2>E-books / Guias Personalizados</h2>
+   <p>Pagamento único por e-book criado e configurado na plataforma.</p>
+   <p style="margin-top:10px">Cada material poderá ser associado a um perfil específico, de acordo com as regras de segmentação definidas no quiz.</p>
+   <p class="note">O valor considera a criação/configuração do material na plataforma a partir do conteúdo fornecido pelo contratante. Conteúdo técnico ou orientação nutricional deverá ser fornecido ou validado pelo profissional responsável.</p>
+  </div>
+  <div><div class="price">R$ 100,00</div><small style="color:var(--mut)">Por e-book</small></div>
+ </div>
+</div></section>
+
+<!-- 14. RESUMO DO INVESTIMENTO -->
+<section><div class="wrap">
+ <h2>Resumo do investimento</h2>
+ <table>
+  <tr><td>Landing Page Interativa</td><td>R$ 1.300,00</td></tr>
+  <tr><td>Formato Web App/PWA</td><td>+ R$ 200,00</td></tr>
+  <tr><td>E-book / Guia personalizado</td><td>R$ 100,00 por unidade</td></tr>
+ </table>
+ <div class="hl" style="margin-top:20px"><h3>Landing Page + Web App</h3><strong>R$ 1.500,00</strong></div>
+ <p class="note">E-books: contratação separada, com pagamento único de R$ 100,00 por e-book criado e configurado na plataforma.</p>
+</div></section>
+</main>
+
+<!-- 15. OBSERVAÇÃO FINAL -->
+<footer class="sum">
+ <h2>Uma estrutura digital criada para unir experiência, interação e personalização em uma única jornada.</h2>
+ <p>Proposta comercial — Desenvolvimento de Landing Page Interativa</p>
+ <div class="by"><div class="brand"><i>H</i>Grupo Haz</div><span>Desenvolvido pelo Grupo Haz</span></div>
+</footer>
+
+<script>
+(function(){
+ /* Quiz demonstrativo */
+ var qs=document.querySelectorAll('.q'),i=0,n=document.getElementById('qn'),d=document.getElementById('qd');
+ document.querySelectorAll('.opt').forEach(function(b){b.addEventListener('click',function(){
+  qs[i].classList.remove('on');i++;
+  if(i<qs.length){qs[i].classList.add('on');n.textContent='Pergunta '+(i+1)+' de 3'}
+  else{d.style.display='block';n.textContent='Concluído'}
+ })});
+ document.getElementById('qr').addEventListener('click',function(){d.style.display='none';i=0;qs[0].classList.add('on');n.textContent='Pergunta 1 de 3'});
+ /* Abas das páginas da LP */
+ document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){
+  document.querySelectorAll('.tabs button,.scr').forEach(function(x){x.classList.remove('on')});
+  b.classList.add('on');document.getElementById(b.dataset.t).classList.add('on');
+ })});
+ /* Entrada suave */
+ var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.15});
+ document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+})();
+</script>
+</body>
+</html>
